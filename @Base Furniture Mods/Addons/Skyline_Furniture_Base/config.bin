@@ -1,0 +1,908 @@
+class CfgPatches
+{
+	class Skyline_Furniture_Base
+	{
+		units[]=
+		{
+			"Skyline_Gun_Cabinet",
+			"Skyline_Gun_Rack",
+			"Skyline_Fridge",
+			"Skyline_Shelf",
+			"Skyline_StorageBox",
+			"Skyline_Workbench"
+		};
+		weapons[]={};
+		requiredVersion=0.1;
+		requiredAddons[]=
+		{
+			"DZ_Data",
+			"DZ_Scripts",
+			"Skyline_Furniture_Base_Kit",
+			"DZ_Weapons_Ammunition",
+			"DZ_Gear_Camping"
+		};
+	};
+};
+class cfgWeapons
+{
+	class RifleCore;
+	class Rifle_Base: RifleCore
+	{
+		inventorySlot[]=
+		{
+			"Shoulder",
+			"Melee",
+			"Shoulder1",
+			"Shoulder2",
+			"Shoulder3",
+			"Shoulder4",
+			"Shoulder5",
+			"Shoulder6",
+			"Shoulder7",
+			"Shoulder8",
+			"Shoulder9",
+			"Shoulder10",
+			"Shoulder11",
+			"Shoulder12",
+			"Shoulder13",
+			"Shoulder14",
+			"Shoulder15",
+			"Shoulder16",
+			"Shoulder17",
+			"Shoulder18",
+			"Shoulder19",
+			"Shoulder20",
+			"Shoulder21",
+			"Shoulder22",
+			"Shoulder23",
+			"Shoulder24"
+		};
+	};
+};
+class CfgVehicles
+{
+	class Inventory_Base;
+	class Container_Base;
+	class Skyline_Furniture_Base: Container_Base
+	{
+		scope=2;
+		destroyOnEmpty=0;
+		varQuantityDestroyOnMin=0;
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=100000000000;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							
+							{
+								"DZ\gear\camping\data\spotlight.rvmat"
+							}
+						},
+						
+						{
+							0.69999999,
+							
+							{
+								"DZ\gear\camping\data\spotlight.rvmat"
+							}
+						},
+						
+						{
+							0.5,
+							
+							{
+								"DZ\gear\camping\data\spotlight_damage.rvmat"
+							}
+						},
+						
+						{
+							0.30000001,
+							
+							{
+								"DZ\gear\camping\data\spotlight_damage.rvmat"
+							}
+						},
+						
+						{
+							0,
+							
+							{
+								"DZ\gear\camping\data\spotlight_destruct.rvmat"
+							}
+						}
+					};
+				};
+			};
+		};
+	};
+	class Skyline_Gun_Cabinet: Skyline_Furniture_Base
+	{
+		scope=2;
+		displayName="Gun Cabinet";
+		descriptionShort="...";
+		model="Skyline_Furniture_Base\Gun_Cabinet\Gun_Cabinet.p3d";
+		bounding="BSphere";
+		overrideDrawArea="3.0";
+		forceFarBubble="true";
+		handheld="true";
+		carveNavmesh=1;
+		canBeDigged=0;
+		weight=50000;
+		itemSize[]={10,10};
+		physLayer="item_large";
+		rotationFlags=0;
+		attachments[]=
+		{
+			"Shoulder1",
+			"Shoulder2",
+			"Shoulder3",
+			"Shoulder4",
+			"Shoulder5",
+			"Shoulder6",
+			"Shoulder7",
+			"Shoulder8",
+			"Pistol"
+		};
+		class Cargo
+		{
+			itemsCargoSize[]={8,3};
+			openable=0;
+			allowOwnedCargoManipulation=0;
+		};
+		class GUIInventoryAttachmentsProps
+		{
+			class Weapons
+			{
+				name="Weapons";
+				description="";
+				attachmentSlots[]=
+				{
+					"Shoulder1",
+					"Shoulder2",
+					"Shoulder3",
+					"Shoulder4",
+					"Shoulder5",
+					"Shoulder6",
+					"Shoulder7",
+					"Shoulder8"
+				};
+				icon="missing";
+			};
+			class Pistol
+			{
+				name="Pistol";
+				description="";
+				attachmentSlots[]=
+				{
+					"Pistol"
+				};
+				icon="missing";
+			};
+		};
+	};
+	class Skyline_Gun_Cabinet_Holo: Skyline_Gun_Cabinet
+	{
+		scope=2;
+		displayName="Gun Cabinet HOLO";
+		model="Skyline_Furniture_Base\Gun_Cabinet\Gun_Cabinet_Holo.p3d";
+	};
+	class Skyline_Gun_Rack: Skyline_Furniture_Base
+	{
+		scope=2;
+		displayName="Gun Rack";
+		descriptionShort="...";
+		model="Skyline_Furniture_Base\Gun_Rack\Gun_Rack.p3d";
+		bounding="BSphere";
+		overrideDrawArea="3.0";
+		forceFarBubble="true";
+		handheld="true";
+		carveNavmesh=1;
+		canBeDigged=0;
+		weight=50000;
+		itemSize[]={10,10};
+		physLayer="item_large";
+		rotationFlags=0;
+		class Cargo
+		{
+		};
+		attachments[]=
+		{
+			"Shoulder1",
+			"Shoulder2",
+			"Shoulder3",
+			"Shoulder4",
+			"Shoulder5",
+			"Shoulder6",
+			"Shoulder7",
+			"Shoulder8",
+			"Shoulder9",
+			"Shoulder10",
+			"Shoulder11",
+			"Shoulder12",
+			"Shoulder13",
+			"Shoulder14",
+			"Shoulder15",
+			"Shoulder16",
+			"Shoulder17",
+			"Shoulder18",
+			"Shoulder19",
+			"Shoulder20",
+			"Shoulder21",
+			"Shoulder22",
+			"Shoulder23",
+			"Shoulder24"
+		};
+		class GUIInventoryAttachmentsProps
+		{
+			class Weapons_Racks_1
+			{
+				name="Row 1";
+				description="";
+				attachmentSlots[]=
+				{
+					"Shoulder1",
+					"Shoulder2",
+					"Shoulder3",
+					"Shoulder4",
+					"Shoulder5",
+					"Shoulder6",
+					"Shoulder7",
+					"Shoulder8"
+				};
+				icon="shoulders";
+			};
+			class Weapons_Racks_2
+			{
+				name="Row 2";
+				description="";
+				attachmentSlots[]=
+				{
+					"Shoulder9",
+					"Shoulder10",
+					"Shoulder11",
+					"Shoulder12",
+					"Shoulder13",
+					"Shoulder14",
+					"Shoulder15",
+					"Shoulder16"
+				};
+				icon="shoulders";
+			};
+			class Weapons_Racks_3
+			{
+				name="Row 3";
+				description="";
+				attachmentSlots[]=
+				{
+					"Shoulder17",
+					"Shoulder18",
+					"Shoulder19",
+					"Shoulder20",
+					"Shoulder21",
+					"Shoulder22",
+					"Shoulder23",
+					"Shoulder24"
+				};
+				icon="shoulders";
+			};
+		};
+	};
+	class Skyline_Gun_Rack_Holo: Skyline_Gun_Rack
+	{
+		scope=2;
+		displayName="Gun Rack HOLO";
+		model="Skyline_Furniture_Base\Gun_Rack\Gun_Rack_Holo.p3d";
+	};
+	class Skyline_Fridge: Skyline_Furniture_Base
+	{
+		scope=2;
+		displayName="Fridge";
+		descriptionShort="...";
+		model="Skyline_Furniture_Base\Fridge\Fridge.p3d";
+		bounding="BSphere";
+		overrideDrawArea="3.0";
+		forceFarBubble="true";
+		handheld="true";
+		carveNavmesh=1;
+		canBeDigged=0;
+		weight=50000;
+		itemSize[]={10,10};
+		physLayer="item_large";
+		rotationFlags=0;
+		class Cargo
+		{
+			itemsCargoSize[]={6,12};
+			openable=0;
+			allowOwnedCargoManipulation=1;
+		};
+	};
+	class Skyline_Fridge_Holo: Skyline_Fridge
+	{
+		scope=2;
+		displayName="Fridge HOLO";
+		model="Skyline_Furniture_Base\Fridge\Fridge_Holo.p3d";
+	};
+	class Skyline_Shelf: Skyline_Furniture_Base
+	{
+		scope=2;
+		displayName="Shelf";
+		descriptionShort="...";
+		model="Skyline_Furniture_Base\Shelf\Shelf.p3d";
+		bounding="BSphere";
+		overrideDrawArea="3.0";
+		forceFarBubble="true";
+		handheld="true";
+		carveNavmesh=1;
+		canBeDigged=0;
+		weight=50000;
+		itemSize[]={10,10};
+		physLayer="item_large";
+		rotationFlags=0;
+		class Cargo
+		{
+			itemsCargoSize[]={6,6};
+			openable=0;
+			allowOwnedCargoManipulation=1;
+		};
+		attachments[]=
+		{
+			"Shoulder1",
+			"Shoulder2",
+			"Pistol",
+			"Back",
+			"Body",
+			"Legs",
+			"Feet",
+			"Eyewear",
+			"Mask",
+			"Gloves",
+			"Vest",
+			"Headgear"
+		};
+		class GUIInventoryAttachmentsProps
+		{
+			class Row1
+			{
+				name="Row 1";
+				description="";
+				attachmentSlots[]=
+				{
+					"Shoulder1",
+					"Shoulder2"
+				};
+				icon="missing";
+			};
+			class Row2
+			{
+				name="Row 2";
+				description="";
+				attachmentSlots[]=
+				{
+					"Mask",
+					"Vest",
+					"Pistol"
+				};
+				icon="missing";
+			};
+			class Row3
+			{
+				name="Row 3";
+				description="";
+				attachmentSlots[]=
+				{
+					"Eyewear",
+					"Gloves",
+					"Headgear",
+					"Body"
+				};
+				icon="missing";
+			};
+			class Row4
+			{
+				name="Row 4";
+				description="";
+				attachmentSlots[]=
+				{
+					"Back",
+					"Legs",
+					"Feet"
+				};
+				icon="missing";
+			};
+		};
+	};
+	class Skyline_Shelf_Holo: Skyline_Shelf
+	{
+		scope=2;
+		displayName="Shelf HOLO";
+		model="Skyline_Furniture_Base\Shelf\Shelf_Holo.p3d";
+	};
+	class Skyline_StorageBox: Skyline_Furniture_Base
+	{
+		scope=2;
+		displayName="Storage Box";
+		descriptionShort="...";
+		model="Skyline_Furniture_Base\Storage_Box\Storage_Box.p3d";
+		bounding="BSphere";
+		overrideDrawArea="3.0";
+		forceFarBubble="true";
+		handheld="true";
+		carveNavmesh=1;
+		canBeDigged=0;
+		weight=50000;
+		itemSize[]={10,10};
+		physLayer="item_large";
+		rotationFlags=0;
+		class Cargo
+		{
+			itemsCargoSize[]={10,25};
+			openable=0;
+			allowOwnedCargoManipulation=1;
+		};
+		attachments[]=
+		{
+			"StorageBox_Tag1",
+			"StorageBox_Tag2",
+			"StorageBox_Tag3"
+		};
+		class GUIInventoryAttachmentsProps
+		{
+			class Tag1
+			{
+				name="Tag";
+				description="";
+				attachmentSlots[]=
+				{
+					"StorageBox_Tag1",
+					"StorageBox_Tag2",
+					"StorageBox_Tag3"
+				};
+				icon="missing";
+			};
+		};
+	};
+	class Skyline_StorageBox_Holo: Skyline_StorageBox
+	{
+		scope=2;
+		displayName="Storage Box HOLO";
+		model="Skyline_Furniture_Base\Storage_Box\Storage_Box_Holo.p3d";
+	};
+	class Skyline_StorageBox_Tag_Weapons: Inventory_Base
+	{
+		scope=2;
+		displayName="Tag Weapons";
+		descriptionShort="...";
+		model="Skyline_Furniture_Base\Storage_Box\WoodenSign.p3d";
+		weight=100;
+		inventorySlot[]=
+		{
+			"StorageBox_Tag1",
+			"StorageBox_Tag2",
+			"StorageBox_Tag3"
+		};
+		itemSize[]={3,1};
+		lootTag[]=
+		{
+			"Work"
+		};
+		lootCategory="Materials";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Weapons.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Medical: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Medical";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Medical.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Ammo: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Ammo";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Ammo.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Clothing: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Clothing";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Clothing.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Component: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Component";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Component.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Construction: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Construction";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Construction.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Magazine: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Magazine";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Magazine.paa"
+		};
+	};
+	class Skyline_StorageBox_Tag_Tools: Skyline_StorageBox_Tag_Weapons
+	{
+		scope=2;
+		displayName="Tag Tools";
+		hiddenSelectionsTextures[]=
+		{
+			"Skyline_Furniture_Base\Storage_Box\Textures\Tag_Tools.paa"
+		};
+	};
+};
+class CfgSlots
+{
+	class Slot_Shoulder
+	{
+	};
+	class Slot_Shoulder_1: Slot_Shoulder
+	{
+		name="Shoulder1";
+		displayName="Shoulder 1";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_2: Slot_Shoulder
+	{
+		name="Shoulder2";
+		displayName="Shoulder 2";
+		ghostIcon="pistol";
+	};
+	class Slot_Shoulder_3: Slot_Shoulder
+	{
+		name="Shoulder3";
+		displayName="Shoulder 3";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_4: Slot_Shoulder
+	{
+		name="Shoulder4";
+		displayName="Shoulder 4";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_5: Slot_Shoulder
+	{
+		name="Shoulder5";
+		displayName="Shoulder 5";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_6: Slot_Shoulder
+	{
+		name="Shoulder6";
+		displayName="Shoulder 6";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_7: Slot_Shoulder
+	{
+		name="Shoulder7";
+		displayName="Shoulder 7";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_8: Slot_Shoulder
+	{
+		name="Shoulder8";
+		displayName="Shoulder 8";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_9: Slot_Shoulder
+	{
+		name="Shoulder9";
+		displayName="Shoulder 9";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_10: Slot_Shoulder
+	{
+		name="Shoulder10";
+		displayName="Shoulder 10";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_11: Slot_Shoulder
+	{
+		name="Shoulder11";
+		displayName="Shoulder 11";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_12: Slot_Shoulder
+	{
+		name="Shoulder12";
+		displayName="Shoulder 12";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_13: Slot_Shoulder
+	{
+		name="Shoulder13";
+		displayName="Shoulder 13";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_14: Slot_Shoulder
+	{
+		name="Shoulder14";
+		displayName="Shoulder 14";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_15: Slot_Shoulder
+	{
+		name="Shoulder15";
+		displayName="Shoulder 15";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_16: Slot_Shoulder
+	{
+		name="Shoulder16";
+		displayName="Shoulder 16";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_17: Slot_Shoulder
+	{
+		name="Shoulder17";
+		displayName="Shoulder 17";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_18: Slot_Shoulder
+	{
+		name="Shoulder18";
+		displayName="Shoulder 18";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_19: Slot_Shoulder
+	{
+		name="Shoulder19";
+		displayName="Shoulder 19";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_20: Slot_Shoulder
+	{
+		name="Shoulder20";
+		displayName="Shoulder 20";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_21: Slot_Shoulder
+	{
+		name="Shoulder21";
+		displayName="Shoulder 21";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_22: Slot_Shoulder
+	{
+		name="Shoulder22";
+		displayName="Shoulder 22";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_23: Slot_Shoulder
+	{
+		name="Shoulder23";
+		displayName="Shoulder 23";
+		ghostIcon="shoulder";
+	};
+	class Slot_Shoulder_24: Slot_Shoulder
+	{
+		name="Shoulder24";
+		displayName="Shoulder 24";
+		ghostIcon="shoulder";
+	};
+	class Slot_StorageBox_Tag1
+	{
+		name="StorageBox_Tag1";
+		displayName="Sign 1";
+		ghostIcon="planks";
+	};
+	class Slot_StorageBox_Tag2: Slot_StorageBox_Tag1
+	{
+		name="StorageBox_Tag2";
+		displayName="Sign 2";
+		ghostIcon="planks";
+	};
+	class Slot_StorageBox_Tag3: Slot_StorageBox_Tag1
+	{
+		name="StorageBox_Tag3";
+		displayName="Sign 3";
+		ghostIcon="planks";
+	};
+};
+class CfgNonAIVehicles
+{
+	class ProxyAttachment;
+	class ProxyWeapons_1: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder1";
+		model="\Skyline_Furniture_Base\proxies\Weapons_1.p3d";
+	};
+	class ProxyWeapons_2: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder2";
+		model="\Skyline_Furniture_Base\proxies\Weapons_2.p3d";
+	};
+	class ProxyWeapons_3: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder3";
+		model="\Skyline_Furniture_Base\proxies\Weapons_3.p3d";
+	};
+	class ProxyWeapons_4: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder4";
+		model="\Skyline_Furniture_Base\proxies\Weapons_4.p3d";
+	};
+	class ProxyWeapons_5: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder5";
+		model="\Skyline_Furniture_Base\proxies\Weapons_5.p3d";
+	};
+	class ProxyWeapons_6: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder6";
+		model="\Skyline_Furniture_Base\proxies\Weapons_6.p3d";
+	};
+	class ProxyWeapons_7: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder7";
+		model="\Skyline_Furniture_Base\proxies\Weapons_7.p3d";
+	};
+	class ProxyWeapons_8: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder8";
+		model="\Skyline_Furniture_Base\proxies\Weapons_8.p3d";
+	};
+	class ProxyWeapons_9: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder9";
+		model="\Skyline_Furniture_Base\proxies\Weapons_9.p3d";
+	};
+	class ProxyWeapons_10: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder10";
+		model="\Skyline_Furniture_Base\proxies\Weapons_10.p3d";
+	};
+	class ProxyWeapons_11: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder11";
+		model="\Skyline_Furniture_Base\proxies\Weapons_11.p3d";
+	};
+	class ProxyWeapons_12: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder12";
+		model="\Skyline_Furniture_Base\proxies\Weapons_12.p3d";
+	};
+	class ProxyWeapons_13: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder13";
+		model="\Skyline_Furniture_Base\proxies\Weapons_13.p3d";
+	};
+	class ProxyWeapons_14: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder14";
+		model="\Skyline_Furniture_Base\proxies\Weapons_14.p3d";
+	};
+	class ProxyWeapons_15: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder15";
+		model="\Skyline_Furniture_Base\proxies\Weapons_15.p3d";
+	};
+	class ProxyWeapons_16: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder16";
+		model="\Skyline_Furniture_Base\proxies\Weapons_16.p3d";
+	};
+	class ProxyWeapons_17: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder17";
+		model="\Skyline_Furniture_Base\proxies\Weapons_17.p3d";
+	};
+	class ProxyWeapons_18: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder18";
+		model="\Skyline_Furniture_Base\proxies\Weapons_18.p3d";
+	};
+	class ProxyWeapons_19: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder19";
+		model="\Skyline_Furniture_Base\proxies\Weapons_19.p3d";
+	};
+	class ProxyWeapons_20: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder20";
+		model="\Skyline_Furniture_Base\proxies\Weapons_20.p3d";
+	};
+	class ProxyWeapons_21: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder21";
+		model="\Skyline_Furniture_Base\proxies\Weapons_21.p3d";
+	};
+	class ProxyWeapons_22: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder22";
+		model="\Skyline_Furniture_Base\proxies\Weapons_22.p3d";
+	};
+	class ProxyWeapons_23: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder23";
+		model="\Skyline_Furniture_Base\proxies\Weapons_23.p3d";
+	};
+	class ProxyWeapons_24: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Shoulder24";
+		model="\Skyline_Furniture_Base\proxies\Weapons_24.p3d";
+	};
+	class ProxyPistols_1: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="Pistol";
+		model="\Skyline_Furniture_Base\proxies\Pistols_1.p3d";
+	};
+	class ProxyTag_1: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="StorageBox_Tag1";
+		model="\Skyline_Furniture_Base\proxies\Tag_1.p3d";
+	};
+	class ProxyTag_2: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="StorageBox_Tag2";
+		model="\Skyline_Furniture_Base\proxies\Tag_2.p3d";
+	};
+	class ProxyTag_3: ProxyAttachment
+	{
+		scope=2;
+		inventorySlot="StorageBox_Tag3";
+		model="\Skyline_Furniture_Base\proxies\Tag_3.p3d";
+	};
+};

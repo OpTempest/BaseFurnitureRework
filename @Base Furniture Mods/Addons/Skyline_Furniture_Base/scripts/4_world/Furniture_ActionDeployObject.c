@@ -1,0 +1,39 @@
+modded class ActionDeployObject
+{
+    override void OnEndServer(ActionData action_data)
+    {
+        if (action_data.m_MainItem.IsKindOf("Skyline_Kit_Gun_Cabinet") || action_data.m_MainItem.IsKindOf("Skyline_Kit_Gun_Rack") || action_data.m_MainItem.IsKindOf("Skyline_Kit_Fridge")	|| action_data.m_MainItem.IsKindOf("Skyline_Kit_Shelf")	|| action_data.m_MainItem.IsKindOf("Skyline_Kit_StorageBox")	|| action_data.m_MainItem.IsKindOf("Skyline_Kit_Workbench"))
+        {
+            PlaceObjectActionData poActionData;
+            poActionData = PlaceObjectActionData.Cast(action_data);
+            if (!poActionData.m_AlreadyPlaced)
+            {
+                EntityAI entity_for_placing = EntityAI.Cast(action_data.m_MainItem);
+                GetGame().ClearJuncture(action_data.m_Player, entity_for_placing);
+                action_data.m_MainItem.SetIsBeingPlaced(false);
+            
+                if (GetGame().IsMultiplayer())
+                {
+                    action_data.m_Player.PlacingCancelServer();
+                    action_data.m_MainItem.SoundSynchRemoteReset();
+                }
+                else
+                {
+                    action_data.m_Player.PlacingCancelLocal();
+                    action_data.m_Player.LocalTakeEntityToHands(entity_for_placing);
+                }
+            }
+            else
+            {
+                GetGame().ObjectDelete(action_data.m_MainItem);
+                action_data.m_MainItem.SetIsDeploySound(false);
+                action_data.m_MainItem.SetIsPlaceSound(false);
+                action_data.m_MainItem.SoundSynchRemoteReset();
+            }
+        }
+        else
+        {
+            super.OnEndServer(action_data);
+        }
+    }
+}
